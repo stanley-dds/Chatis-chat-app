@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.0/signalr.min.js"></script>
+</head>
+<body>
+    <h1>Real-Time Chat</h1>
+
+    <div id="chatArea">
+        <div id="messagesList"></div>
+        <input type="text" id="userInput" placeholder="Enter your name" />
+        <input type="text" id="messageInput" placeholder="Enter your message" />
+        <button id="sendButton">Send</button>
+    </div>
+
+    <script>
+        // Создаем соединение с хабом (создаем один раз при загрузке страницы)
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("/chatHub")
+            .build();
+
+        // Обработчик получения сообщений с сервера
+        connection.on("ReceiveMessage", (user, message) => {
+            const msg = document.createElement("div");
+            msg.textContent = `${user}: ${message}`;
+            document.getElementById("messagesList").appendChild(msg);
+        });
+
+        // Подключаемся к хабу при загрузке страницы
+        connection.start()
+            .then(() => console.log("Connected to the chat hub"))
+            .catch(err => console.error("Connection failed: ", err));
+
+        // Функция для отправки сообщения на сервер
+        function sendMessage() {
+            const user = document.getElementById("userInput").value;
+            const message = document.getElementById("messageInput").value;
+
+            if (!user || !message) {
+                alert("Please enter both username and message.");
+                return;
+            }
+
+            // Отправляем сообщение на сервер
+            connection.invoke("SendMessage", user, message)
+                .then(() => {
+                    // Очищаем поле ввода сообщения после успешной отправки
+                    document.getElementById("messageInput").value = "";
+                })
+                .catch(err => console.error("Error sending message: ", err));
+        }
+
+        // Привязываем кнопку Send к функции sendMessage (только один раз)
+        document.getElementById("sendButton").addEventListener("click", sendMessage);
+    </script>
+</body>
+</html>

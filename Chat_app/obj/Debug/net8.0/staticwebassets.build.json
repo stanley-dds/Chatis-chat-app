@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "M8ecyWH3vylGILZkwS6oizQxgiX48Lj6pXfXPHuT9qU=",
+  "Source": "Chat_app",
+  "BasePath": "_content/Chat_app",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Chat_app\\wwwroot",
+      "Source": "Chat_app",
+      "ContentRoot": "C:\\Users\\delic\\source\\Chat_app\\wwwroot\\",
+      "BasePath": "_content/Chat_app",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\delic\\source\\Chat_app\\wwwroot\\index.html",
+      "SourceId": "Chat_app",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\delic\\source\\Chat_app\\wwwroot\\",
+      "BasePath": "_content/Chat_app",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
+}

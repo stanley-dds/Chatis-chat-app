@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "M8ecyWH3vylGILZkwS6oizQxgiX48Lj6pXfXPHuT9qU=",
+  "Hash": "3gcuTQzB6a/le857znfLG+S5HrrRod2tUMChLDlcUgo=",
   "Source": "Chat_app",
   "BasePath": "_content/Chat_app",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Chat_app\\wwwroot",
       "Source": "Chat_app",
-      "ContentRoot": "C:\\Users\\delic\\source\\Chat_app\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\delic\\source\\CHAT\\Chat_app\\wwwroot\\",
       "BasePath": "_content/Chat_app",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\delic\\source\\Chat_app\\wwwroot\\index.html",
+      "Identity": "C:\\Users\\delic\\source\\CHAT\\Chat_app\\wwwroot\\index.html",
       "SourceId": "Chat_app",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\delic\\source\\Chat_app\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\delic\\source\\CHAT\\Chat_app\\wwwroot\\",
       "BasePath": "_content/Chat_app",
       "RelativePath": "index.html",
       "AssetKind": "All",

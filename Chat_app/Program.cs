@@ -1,4 +1,6 @@
 
+using Microsoft.EntityFrameworkCore;
+
 namespace Chat_app
 {
     public class Program
@@ -11,8 +13,14 @@ namespace Chat_app
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen();           
+
+            // ??????????? ????????? ???? ?????? ChatDbContext
+            builder.Services.AddDbContext<ChatDbContext>(options =>
+                options.UseSqlite("Data Source=chat.db"));
+
             builder.Services.AddSignalR();
+
 
             var app = builder.Build();
 

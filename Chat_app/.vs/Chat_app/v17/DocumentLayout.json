@@ -1,20 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\delic\\source\\Chat_app\\",
+  "WorkspaceRootPath": "C:\\Users\\delic\\source\\CHAT\\Chat_app\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D61FF831-BA22-4634-8CDA-653E7CE5DD20}|Chat_app.csproj|c:\\users\\delic\\source\\chat_app\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D61FF831-BA22-4634-8CDA-653E7CE5DD20}|Chat_app.csproj|solutionrelative:controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D61FF831-BA22-4634-8CDA-653E7CE5DD20}|Chat_app.csproj|c:\\users\\delic\\source\\chat\\chat_app\\chatdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D61FF831-BA22-4634-8CDA-653E7CE5DD20}|Chat_app.csproj|solutionrelative:chatdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9CB7C22A-B4E7-47BF-896B-D52D58F88912}|..\\Chat_Desktop\\Chat_Desktop.csproj|c:\\users\\delic\\source\\chat_desktop\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D61FF831-BA22-4634-8CDA-653E7CE5DD20}|Chat_app.csproj|c:\\users\\delic\\source\\chat\\chat_app\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D61FF831-BA22-4634-8CDA-653E7CE5DD20}|Chat_app.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9CB7C22A-B4E7-47BF-896B-D52D58F88912}|..\\Chat_Desktop\\Chat_Desktop.csproj|c:\\users\\delic\\source\\chat_desktop\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D61FF831-BA22-4634-8CDA-653E7CE5DD20}|Chat_app.csproj|c:\\users\\delic\\source\\chat_app\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{D61FF831-BA22-4634-8CDA-653E7CE5DD20}|Chat_app.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{D61FF831-BA22-4634-8CDA-653E7CE5DD20}|Chat_app.csproj|c:\\users\\delic\\source\\chat\\chat_app\\hub\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D61FF831-BA22-4634-8CDA-653E7CE5DD20}|Chat_app.csproj|solutionrelative:hub\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -33,52 +31,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ChatController.cs",
-              "DocumentMoniker": "C:\\Users\\delic\\source\\Chat_app\\Controllers\\ChatController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ChatController.cs",
-              "ToolTip": "C:\\Users\\delic\\source\\Chat_app\\Controllers\\ChatController.cs",
-              "RelativeToolTip": "Controllers\\ChatController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAASAAAA",
+              "Title": "ChatDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\delic\\source\\CHAT\\Chat_app\\ChatDbContext.cs",
+              "RelativeDocumentMoniker": "ChatDbContext.cs",
+              "ToolTip": "C:\\Users\\delic\\source\\CHAT\\Chat_app\\ChatDbContext.cs",
+              "RelativeToolTip": "ChatDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T20:59:14.429Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\delic\\source\\Chat_Desktop\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "..\\Chat_Desktop\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\delic\\source\\Chat_Desktop\\MainWindow.xaml",
-              "RelativeToolTip": "..\\Chat_Desktop\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-09-11T20:38:15.322Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\delic\\source\\Chat_app\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\delic\\source\\Chat_app\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAuwCEAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-11T20:30:40.173Z",
+              "WhenOpened": "2024-09-13T15:55:36.644Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\delic\\source\\Chat_Desktop\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "..\\Chat_Desktop\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\delic\\source\\Chat_Desktop\\MainWindow.xaml.cs",
-              "RelativeToolTip": "..\\Chat_Desktop\\MainWindow.xaml.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAiwCQAAAA7AAAA",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\delic\\source\\CHAT\\Chat_app\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\delic\\source\\CHAT\\Chat_app\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T20:28:25.046Z",
+              "WhenOpened": "2024-09-13T15:52:29.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ChatHub.cs",
+              "DocumentMoniker": "C:\\Users\\delic\\source\\CHAT\\Chat_app\\Hub\\ChatHub.cs",
+              "RelativeDocumentMoniker": "Hub\\ChatHub.cs",
+              "ToolTip": "C:\\Users\\delic\\source\\CHAT\\Chat_app\\Hub\\ChatHub.cs",
+              "RelativeToolTip": "Hub\\ChatHub.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T15:49:30.901Z",
               "EditorCaption": ""
             },
             {

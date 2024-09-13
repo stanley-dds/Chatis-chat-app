@@ -1,0 +1,16 @@
+# Игнорирование временных файлов Visual Studio
+.vs/
+*.user
+*.suo
+*.vscode/
+*.db
+build/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+# Игнорирование временных файлов системы
+*.log
+*.tmp
+*.bak

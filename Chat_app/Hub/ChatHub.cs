@@ -1,7 +1,9 @@
 ﻿using Chat_app;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
 using System.Threading.Tasks;
 
+[Authorize]
 public class ChatHub : Hub
 {
     private readonly ChatDbContext _context;

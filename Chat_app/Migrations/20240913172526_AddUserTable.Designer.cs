@@ -3,6 +3,7 @@ using System;
 using Chat_app;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,14 +11,16 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Chat_app.Migrations
 {
     [DbContext(typeof(ChatDbContext))]
-    partial class ChatDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240913172526_AddUserTable")]
+    partial class AddUserTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.8");
 
-            modelBuilder.Entity("Chat_app.Models.Message", b =>
+            modelBuilder.Entity("Chat_app.Message", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -39,7 +42,7 @@ namespace Chat_app.Migrations
                     b.ToTable("Messages");
                 });
 
-            modelBuilder.Entity("Chat_app.Models.User", b =>
+            modelBuilder.Entity("Chat_app.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

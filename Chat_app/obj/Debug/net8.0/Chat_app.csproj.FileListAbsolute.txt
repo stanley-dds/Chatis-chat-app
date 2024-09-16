@@ -159,7 +159,9 @@ C:\Users\delic\source\CHAT\Chat_app\bin\Debug\net8.0\Chat_app.dll
 C:\Users\delic\source\CHAT\Chat_app\bin\Debug\net8.0\Chat_app.pdb
 C:\Users\delic\source\CHAT\Chat_app\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\delic\source\CHAT\Chat_app\bin\Debug\net8.0\Azure.Identity.dll
+C:\Users\delic\source\CHAT\Chat_app\bin\Debug\net8.0\BCrypt.Net-Next.dll
 C:\Users\delic\source\CHAT\Chat_app\bin\Debug\net8.0\Humanizer.dll
+C:\Users\delic\source\CHAT\Chat_app\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\delic\source\CHAT\Chat_app\bin\Debug\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll
 C:\Users\delic\source\CHAT\Chat_app\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Connections.Client.dll
 C:\Users\delic\source\CHAT\Chat_app\bin\Debug\net8.0\Microsoft.AspNetCore.Http.Connections.Common.dll
@@ -326,4 +328,3 @@ C:\Users\delic\source\CHAT\Chat_app\obj\Debug\net8.0\refint\Chat_app.dll
 C:\Users\delic\source\CHAT\Chat_app\obj\Debug\net8.0\Chat_app.pdb
 C:\Users\delic\source\CHAT\Chat_app\obj\Debug\net8.0\Chat_app.genruntimeconfig.cache
 C:\Users\delic\source\CHAT\Chat_app\obj\Debug\net8.0\ref\Chat_app.dll
-C:\Users\delic\source\CHAT\Chat_app\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

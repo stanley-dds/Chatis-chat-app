@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Chat_app.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -10,27 +12,51 @@ namespace Chat_app.Controllers
     [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {
-        [HttpPost("login")]
-        public IActionResult Login([FromBody] LoginModel login)
+        private readonly ChatDbContext _context;
+        private readonly IConfiguration _configuration;
+
+        public AuthController(ChatDbContext context, IConfiguration configuration)
         {
-            // Простая проверка пользователя
-            if (login.Username == "user" && login.Password == "password")
+            _context = context;
+            _configuration = configuration;
+        }
+
+        // User registration
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] RegisterModel model)
+        {
+            if (await _context.Users.AnyAsync(u => u.Username == model.Username))
             {
-                // Генерация токена
-                var token = GenerateJwtToken(login.Username);
-                return Ok(new { token });
+                return BadRequest(new { message = "A user with this username already exists." });
             }
 
-            return Unauthorized();
+            var user = new User
+            {
+                Username = model.Username,
+                PasswordHash = BCrypt.Net.BCrypt.HashPassword(model.Password)
+            };
+
+            _context.Users.Add(user);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Registration successful!" });
         }
 
-        [HttpGet("test")]
-        public IActionResult Test()
+        // User login
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] LoginModel model)
         {
-            return Ok("AuthController работает!");
+            var user = await _context.Users.SingleOrDefaultAsync(u => u.Username == model.Username);
+            if (user == null || !BCrypt.Net.BCrypt.Verify(model.Password, user.PasswordHash))
+            {
+                return Unauthorized(new { message = "Invalid username or password." });
+            }
+
+            var token = GenerateJwtToken(user.Username);
+            return Ok(new { token });
         }
 
-
+        // JWT token generation
         private string GenerateJwtToken(string username)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("TheeeeeSuperLongSecretKey1234567890"));
@@ -38,24 +64,32 @@ namespace Chat_app.Controllers
 
             var claims = new[]
             {
-            new Claim(JwtRegisteredClaimNames.Sub, username),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+                new Claim(JwtRegisteredClaimNames.Sub, username),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
 
             var token = new JwtSecurityToken(
                 issuer: "http://localhost",
                 audience: "chat_app_client",
                 claims: claims,
-                expires: DateTime.Now.AddMinutes(30),
+                expires: DateTime.Now.AddHours(2),
                 signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+    }
 
-        public class LoginModel
-        {
-            public string Username { get; set; }
-            public string Password { get; set; }
-        }
+    // Model for registration
+    public class RegisterModel
+    {
+        public string Username { get; set; }
+        public string Password { get; set; }
+    }
+
+    // Model for login
+    public class LoginModel
+    {
+        public string Username { get; set; }
+        public string Password { get; set; }
     }
 }

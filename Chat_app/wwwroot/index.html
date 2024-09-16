@@ -4,57 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat Application</title>
+    <!-- SignalR connection -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.0/signalr.min.js"></script>
+    <style>
+        /* Simple styling for better appearance */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #chatArea {
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 300px;
+            overflow-y: scroll;
+            margin-top: 20px;
+        }
+
+        #messagesList div {
+            margin-bottom: 10px;
+        }
+
+        form {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .placeholder {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: gray;
+            pointer-events: none;
+            font-style: italic;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
     <h1>Real-Time Chat</h1>
 
-    <div id="chatArea">
-        <div id="messagesList"></div>
-        <input type="text" id="userInput" placeholder="Enter your name" />
-        <input type="text" id="messageInput" placeholder="Enter your message" />
-        <button id="sendButton">Send</button>
+    <!-- Authorization section -->
+    <div id="authSection">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div style="position: relative;">
+                <input type="text" id="loginUsername" required>
+                <span class="placeholder">Username</span>
+            </div>
+            <div style="position: relative; margin-top: 10px;">
+                <input type="password" id="loginPassword" required>
+                <span class="placeholder">Password</span>
+            </div>
+            <button type="submit" style="margin-top: 10px;">Login</button>
+        </form>
+
+        <h2>Register</h2>
+        <form id="registerForm">
+            <div style="position: relative;">
+                <input type="text" id="registerUsername" required>
+                <span class="placeholder">Username</span>
+            </div>
+            <div style="position: relative; margin-top: 10px;">
+                <input type="password" id="registerPassword" required>
+                <span class="placeholder">Password</span>
+            </div>
+            <button type="submit" style="margin-top: 10px;">Register</button>
+        </form>
     </div>
 
-    <script>
-        // Создаем соединение с хабом (создаем один раз при загрузке страницы)
-        const connection = new signalR.HubConnectionBuilder()
-            .withUrl("/chatHub")
-            .build();
+    <!-- Chat section, initially hidden -->
+    <div id="chatSection" class="hidden">
+        <h2>Send a message</h2>
+        <form id="messageForm">
+            <div style="position: relative;">
+                <input type="text" id="messageInput" required>
+                <span class="placeholder">Enter message</span>
+            </div>
+            <button type="submit" style="margin-top: 10px;">Send</button>
+        </form>
 
-        // Обработчик получения сообщений с сервера
-        connection.on("ReceiveMessage", (user, message) => {
-            const msg = document.createElement("div");
-            msg.textContent = `${user}: ${message}`;
-            document.getElementById("messagesList").appendChild(msg);
-        });
+        <div id="chatArea">
+            <div id="messagesList"></div>
+        </div>
+    </div>
 
-        // Подключаемся к хабу при загрузке страницы
-        connection.start()
-            .then(() => console.log("Connected to the chat hub"))
-            .catch(err => console.error("Connection failed: ", err));
-
-        // Функция для отправки сообщения на сервер
-        function sendMessage() {
-            const user = document.getElementById("userInput").value;
-            const message = document.getElementById("messageInput").value;
-
-            if (!user || !message) {
-                alert("Please enter both username and message.");
-                return;
-            }
-
-            // Отправляем сообщение на сервер
-            connection.invoke("SendMessage", user, message)
-                .then(() => {
-                    // Очищаем поле ввода сообщения после успешной отправки
-                    document.getElementById("messageInput").value = "";
-                })
-                .catch(err => console.error("Error sending message: ", err));
-        }
-
-        // Привязываем кнопку Send к функции sendMessage (только один раз)
-        document.getElementById("sendButton").addEventListener("click", sendMessage);
-    </script>
+    <!-- Link to JavaScript file -->
+    <script src="/js.js"></script>
 </body>
 </html>

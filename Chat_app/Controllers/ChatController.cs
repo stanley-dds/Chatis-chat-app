@@ -1,27 +1,37 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
+using Chat_app.Models;
+using System.Threading.Tasks;
 
 namespace Chat_app.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
+    [Authorize]
     public class ChatController : ControllerBase
     {
-        // GET: api/chat
-        [HttpGet]
-        public IActionResult GetMessages()
+        private readonly IHubContext<ChatHub> _hubContext;
+
+        public ChatController(IHubContext<ChatHub> hubContext)
         {
-            // БД добавлю позже
-            var messages = new List<string> { "Message1", "Message2", "Message3" };
-            return Ok(messages);
+            _hubContext = hubContext;
         }
 
-        // POST: api/chat
         [HttpPost]
-        public IActionResult PostMessage([FromBody] string message)
+        public async Task<IActionResult> Post([FromBody] string message)
         {
+            if (string.IsNullOrWhiteSpace(message))
+            {
+                return BadRequest(new { Message = "Message cannot be empty." });
+            }
 
-            return Ok($"Message '{message}' received!");
+            var userName = User.Identity.Name; // Get username from token
+
+            // Send message to all connected clients via SignalR
+            await _hubContext.Clients.All.SendAsync("ReceiveMessage", userName, message);
+
+            return Ok(new { Message = "Message sent." });
         }
     }
 }

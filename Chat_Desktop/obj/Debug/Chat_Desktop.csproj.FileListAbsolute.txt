@@ -128,6 +128,7 @@ C:\Users\delic\source\CHAT\Chat_Desktop\bin\Debug\System.ValueTuple.xml
 C:\Users\delic\source\CHAT\Chat_Desktop\obj\Debug\Chat_Desktop.csproj.AssemblyReference.cache
 C:\Users\delic\source\CHAT\Chat_Desktop\obj\Debug\MainWindow.g.cs
 C:\Users\delic\source\CHAT\Chat_Desktop\obj\Debug\App.g.cs
+C:\Users\delic\source\CHAT\Chat_Desktop\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\delic\source\CHAT\Chat_Desktop\obj\Debug\Chat_Desktop_MarkupCompile.cache
 C:\Users\delic\source\CHAT\Chat_Desktop\obj\Debug\Chat_Desktop_MarkupCompile.lref
 C:\Users\delic\source\CHAT\Chat_Desktop\obj\Debug\MainWindow.baml

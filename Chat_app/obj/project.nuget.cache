@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "mnTLxUkUOXygO9b6B744MXk2YAyNqrxM1RcL2IGWQxbfC9UY606XZmIhR5gw3hodMGNJjp+PxCA43NZ3D2sAbg==",
+  "dgSpecHash": "8QIvRvrjqDIKzlDGfloVVMUvMCE3APDYYxvYkoXScWilDYIaZ30mmIKP6Xo5HcG67Y5bRdlkZpTgAJIRchf2lA==",
   "success": true,
   "projectFilePath": "C:\\Users\\delic\\source\\CHAT\\Chat_app\\Chat_app.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\delic\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\delic\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\delic\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\delic\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\delic\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\delic\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.8\\microsoft.aspnetcore.authentication.jwtbearer.8.0.8.nupkg.sha512",
